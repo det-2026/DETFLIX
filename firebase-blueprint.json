@@ -1,0 +1,91 @@
+{
+  "entities": {
+    "movies": {
+      "title": "Movies and Dramas",
+      "description": "Collection of movies, dramas, anime, and web series added by admin.",
+      "properties": {
+        "title": { "type": "string" },
+        "originalTitle": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "posterUrl": { "type": "string" },
+        "bannerUrl": { "type": "string" },
+        "trailerUrl": { "type": "string" },
+        "watchUrl": { "type": "string" },
+        "telegramChannelUrl": { "type": "string" },
+        "releaseYear": { "type": "number" },
+        "rating": { "type": "number" },
+        "duration": { "type": "string" },
+        "genres": { "type": "array", "items": { "type": "string" } },
+        "languages": { "type": "array", "items": { "type": "string" } },
+        "isVip": { "type": "boolean" },
+        "isFeatured": { "type": "boolean" },
+        "isTrending": { "type": "boolean" },
+        "cast": { "type": "array", "items": { "type": "string" } },
+        "director": { "type": "string" },
+        "addedAt": { "type": "string" }
+      },
+      "required": ["title", "type", "posterUrl"]
+    },
+    "appSettings": {
+      "title": "App Settings",
+      "description": "Global application settings such as Telegram link, Notice text, UPI ID, admin pin.",
+      "properties": {
+        "appName": { "type": "string" },
+        "telegramChannelUrl": { "type": "string" },
+        "telegramChannelName": { "type": "string" },
+        "telegramMemberCount": { "type": "string" },
+        "noticeText": { "type": "string" },
+        "upiPaymentId": { "type": "string" },
+        "adminPin": { "type": "string" }
+      }
+    },
+    "plans": {
+      "title": "Subscription Plans",
+      "description": "Subscription plans configuration.",
+      "properties": {
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "currency": { "type": "string" },
+        "duration": { "type": "string" },
+        "badge": { "type": "string" },
+        "color": { "type": "string" },
+        "features": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "comments": {
+      "title": "Movie Comments and Reviews",
+      "description": "User reviews and replies for movies and series.",
+      "properties": {
+        "movieId": { "type": "string" },
+        "userName": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "replies": { "type": "array" }
+      },
+      "required": ["movieId", "userName", "text", "createdAt"]
+    }
+  },
+  "securityRules": [
+    {
+      "collection": "movies",
+      "read": "true",
+      "write": "true"
+    },
+    {
+      "collection": "appSettings",
+      "read": "true",
+      "write": "true"
+    },
+    {
+      "collection": "plans",
+      "read": "true",
+      "write": "true"
+    },
+    {
+      "collection": "comments",
+      "read": "true",
+      "write": "true"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": " DETFLIX",
+  "description": "Movie \u0026 Drama Series streaming app with admin content manager, trailer player, Telegram channel integration, and subscription plan features.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
